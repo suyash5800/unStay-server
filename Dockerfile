@@ -4,7 +4,8 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Stage 2: Run the application
-FROM openjdk:17-jdk-slim
+# CHANGED: Using eclipse-temurin instead of the deprecated openjdk image
+FROM eclipse-temurin:17-jdk-alpine
 COPY --from=build /target/*.jar demo.jar
 EXPOSE 8885
 ENTRYPOINT ["java","-jar","demo.jar"]
