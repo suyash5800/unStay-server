@@ -2,15 +2,16 @@ package com.unstay.server.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.unstay.server.services.UserServices;
 import com.unstay.server.entity.User;
 
-@CrossOrigin(origins = "http://localhost:5173")
+
+
+
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "https://um-stay-client.vercel.app")
 public class UserController {
 
     @Autowired
